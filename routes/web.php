@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\TodosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,15 @@ Route::get('/', function () {
 Route::get('todos', 'TodosController@index');
 
 Route::get('todos/{todo}', 'TodosController@show');
+
+Route::get('new-todos', 'TodosController@create');
+
+Route::get('todos/{todo}/edit', 'TodosController@edit');
+
+Route::post('store-todos', 'TodosController@store');
+
+Route::post('todos/{todo}/update-todos', 'TodosController@update');
+
+Route::get('todos/{todo}/delete', 'TodosController@destroy');
+
+Route::get('todos/{todo}/complete', 'TodosController@complete');
